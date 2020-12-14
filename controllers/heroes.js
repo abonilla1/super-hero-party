@@ -12,8 +12,15 @@ module.exports = {
 }
 
 function index (req, res) {
-
+    Hero.find({ addedBy: req.user._id })
+        .then((heroes) => {
+            res.render('heroes/index', {
+            user: req.user,
+            heroes
+        })
+    })
 }
+
 
 
 function newHero(req, res) {
