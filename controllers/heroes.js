@@ -22,7 +22,6 @@ function index (req, res) {
 }
 
 
-
 function newHero(req, res) {
     res.render("heroes/new", {
         user: req.user,

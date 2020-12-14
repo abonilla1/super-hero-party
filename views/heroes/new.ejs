@@ -12,17 +12,24 @@
 
 <% if(results) { %>
     <% results.forEach(hero => { %>
-        <%= hero.id%>
-        <%= hero.name %>
-        <%= hero.powerstats%>
-        <a href="/heroes/<%=hero.id%>" class="btn btn-outline-primary">Details</a>
+        <div class="card border-primary mb-3" style="width: 20rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%= hero.name%></h5>
+            </div>
+            <h6>Stats</h6>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Intelligence: <%=hero.powerstats.intelligence%></li>
+                <li class="list-group-item">Strength: <%=hero.powerstats.strength%></li>
+                <li class="list-group-item">Combat: <%=hero.powerstats.combat%></li>
+            </ul>
+            <div class="card-body">
+                <a href="/heroes/<%=hero.id%>" class="card-link">Details</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
     <% }) %>
-<%} %>
-<form action="/heroes" method="POST">
-<button type="submit" class="btn btn-outline-primary">Add to Team</button>
-</form>
-
-
+<% } %>
 
 <%- include("../partials/footer") %>
 
