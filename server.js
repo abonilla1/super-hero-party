@@ -6,6 +6,7 @@ const logger = require("morgan");
 const session = require("express-session");
 const passport = require("passport");
 const methodOverride = require("method-override");
+const bootstrap = require('bootstrap');
 
 // load env variables
 require("dotenv").config();
