@@ -2,12 +2,17 @@ const Hero = require("../models/hero");
 const axios = require("axios");
 
 
+
 module.exports = {
     index,
     new: newHero,
     search,
     show,
     
+}
+
+function index (req, res) {
+
 }
 
 
@@ -19,7 +24,7 @@ function newHero(req, res) {
 }
 
 function search(req, res) {
-    axios.get(`https://superheroapi.com/api/106220101357993/search/${req.body.query}`)
+    axios.get(`https://superheroapi.com/api/${process.env.API_KEY}/search/${req.body.query}`)
     .then((response) => {
         console.log(response.data.results)
         res.render("heroes/new", {
@@ -30,5 +35,23 @@ function search(req, res) {
 }
 
 function show(req, res) {
-    axios.get(`https://super/api/106220101357993/`)
-})
+    console.log(req.params.id)
+    axios.get(`https://superheroapi.com/api/${process.env.API_KEY}/${req.params.id}`)
+    .then((response) => {
+        Hero.findOne({ id: response.data.id})
+        .then((hero) => {
+            if (hero) {
+                res.render("heroes/show", {
+                    user: req.user,
+                    hero: response.data
+                });
+            }
+            else {
+                res.render("heroes/show", {
+                    user: req.user,
+                    hero: response.data
+                });
+            }
+        })
+    })
+}
