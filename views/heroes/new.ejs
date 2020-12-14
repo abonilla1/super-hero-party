@@ -1,10 +1,26 @@
 <%- include("../partials/header") %>
 
+<h4>Search for a Hero to add to your team</h4>
+<form action="/heroes/search" method="POST">
+    <div class="form-row">
+        <div class="col-md-6">
+            <input type="text" name="query" placeholder="Type Hero Name">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-outline-primary">Search</button>
+</form>
 
-
-
-
-
+<% if(results) { %>
+    <% results.forEach(hero => { %>
+        <%= hero.id%>
+        <%= hero.name %>
+        <%= hero.powerstats%>
+        <a href="/heroes/<%=hero.id%>" class="btn btn-outline-primary">Details</a>
+    <% }) %>
+<%} %>
+<form action="/heroes" method="POST">
+<button type="submit" class="btn btn-outline-primary">Add to Team</button>
+</form>
 
 
 
