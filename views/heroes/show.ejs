@@ -1,14 +1,35 @@
 <%- include("../partials/header")%>
-<h3>Hero Details</h3>
 
-<img src=<%=hero.image.url%>>
-<p>Hero Name: <%=hero.name%></p>
+<h3><%=hero.name%> Details </h3>
 
-<p>Secret Identity: <%=`${hero.biography."full-name"}`%></p>
-<p>Aliases: </p>
-<p>Publisher: <%=hero.biography.publisher%></p>
-<p>First Appeared: <%=`${hero.biography."first-appearance"}`%></p>
+<img src="<%=hero.image.url%>" alt="..." height=400px>
+<div class="card-group">
+    <div class="card">
+        <ul>
+            <p>Stats:</p>
+            <li>Intelligence: <%=hero.powerstats.intelligence%></li>
+            <li>Strength: <%=hero.powerstats.strength%></li>
+            <li>Speed: <%=hero.powerstats.speed%> </li>
+            <li>Power: <%=hero.powerstats.power%> </li>
+            <li>Combat: <%=hero.powerstats.combat%> </li>
+        </ul>
+    </div>
+    <div class="card">
+        <p>Publisher: <%=hero.biography["publisher"] %> </p>
+        <p>First Appeared: <%= hero.biography["first-appearance"]%> </p>
+        <p>Affiliations: <%=hero.connections["group-affiliation"]%></p>
+    </div>
+    <div class="card">
+        <p>This is where ratings will go</p>
+    </div>
+  </div>
 
+<form action="/heroes/team" method="POST"></form>
+    <input type="text" hidden name="query" value="<%=hero.id%>"> 
+    <button type="submit"class="btn btn-primary">Add to Team</button>
+</form>
 
 <%- include("../partials/footer")%>
+
+
 

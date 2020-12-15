@@ -9,24 +9,19 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-xl navbar-dark bg-primary">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div>
-          <div class="navbar-nav">
-            <a class="nav-link active" href="/">Home</a>
-            <a class="nav-link active" aria-current="page" href="/heroes/new">Search for Heroes</a>
-            <a class="nav-link active" href="/heroes">My Team</a>
-            <a class="nav-link active" href="/users/profile">My Profile</a>
-            <a class="nav-link active" href="/users">Online Now!</a>
-            <% if (user) { %>
-            <a class="nav-link active" href="/auth/logout">Log Out</a>
-              <% } else { %>
-            <a class="nav-link active" href="/auth/google">Login with google</a>
+    <nav class="navbar sticky-top navbar-expand-xl navbar-dark bg-primary">
+      <div>
+        <div class="navbar-nav">
+          <a class="nav-link active" href="/">Home</a>
+          <a class="nav-link active" aria-current="page" href="/heroes/new">Search for Heroes</a>
+          <a class="nav-link active" href="/heroes/team">My Team</a>
+          <a class="nav-link active" href="/users/profile">My Profile</a>
+          <a class="nav-link active" href="/users">Online Now!</a>
+          <% if (user) { %>
+          <a class="nav-link active" href="/auth/logout">Log Out</a>
+            <% } else { %>
+          <a class="nav-link active" href="/auth/google">Login with google</a>
             <% } %>
-          </div>
         </div>
       </div>
     </nav>

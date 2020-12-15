@@ -2,22 +2,20 @@ const Hero = require("../models/hero");
 const axios = require("axios");
 
 
-
 module.exports = {
     index,
     new: newHero,
     search,
     show,
+    addToTeam
+  
     
 }
 
 function index (req, res) {
-    Hero.find({ addedBy: req.user._id })
-        .then((heroes) => {
-            res.render('heroes/index', {
-            user: req.user,
-            heroes
-        })
+    res.render('heroes', {
+        user: req.user,
+        heroes
     })
 }
 
@@ -32,7 +30,6 @@ function newHero(req, res) {
 function search(req, res) {
     axios.get(`https://superheroapi.com/api/${process.env.API_KEY}/search/${req.body.query}`)
     .then((response) => {
-        console.log(response.data.results)
         res.render("heroes/new", {
             user: req.user,
             results: response.data.results
@@ -41,7 +38,6 @@ function search(req, res) {
 }
 
 function show(req, res) {
-    console.log(req.params.id)
     axios.get(`https://superheroapi.com/api/${process.env.API_KEY}/${req.params.id}`)
     .then((response) => {
         Hero.findOne({ id: response.data.id})
@@ -59,5 +55,23 @@ function show(req, res) {
                 });
             }
         })
+    })
+}
+
+function addToTeam(req, res) {
+    Hero.findOne({apiId: parseInt(req.body.hero)})
+    console.log(hero)
+    .then((hero) => {
+      if (hero) {
+        hero.save()
+        .then(() => {
+          res.redirect(`/heroes`)
+        })
+      } else {
+        Hero.create(axios.get(`https://superheroapi.com/api/${process.env.API_KEY}/${id}`))
+        .then(() => {
+          res.redirect(`/heroes`)
+        })
+      }
     })
 }
