@@ -13,7 +13,7 @@
 <% if(results) { %>
     <% results.forEach(hero => { %>
         <div class="card border-primary mb-3" style="width: 20rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="<%=hero.image.url%>" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><%= hero.name%></h5>
             </div>

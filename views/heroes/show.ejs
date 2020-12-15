@@ -1,7 +1,14 @@
 <%- include("../partials/header")%>
+<h3>Hero Details</h3>
 
+<img src=<%=hero.image.url%>>
+<p>Hero Name: <%=hero.name%></p>
 
-
+<p>Secret Identity: <%=`${hero.biography."full-name"}`%></p>
+<p>Aliases: </p>
+<p>Publisher: <%=hero.biography.publisher%></p>
+<p>First Appeared: <%=`${hero.biography."first-appearance"}`%></p>
 
 
 <%- include("../partials/footer")%>
+

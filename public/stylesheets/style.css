@@ -1,6 +1,8 @@
 
 body {
     font-family: 'Bebas Neue', cursive;
+    display: flex;
     justify-content: center;
-    
+    flex-direction: column;
+    align-items: center;
 }    
