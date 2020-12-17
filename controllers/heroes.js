@@ -8,7 +8,9 @@ module.exports = {
     new: newHero,
     search,
     show,
-    addToTeam
+    addToTeam,
+    // createRating,
+    delete: deleteHero
   
     
 }
@@ -51,13 +53,15 @@ function show(req, res) {
                     user: req.user,
                     hero: response.data,
                     addedBy: hero.addedBy,
+                    ratings: hero.ratings,
                 });
             }
             else {
                 res.render("heroes/show", {
                     user: req.user,
                     hero: response.data,
-                    addedBy: [""]
+                    addedBy: [""],
+                    ratings: [""]
                 });
             }
         })
@@ -82,4 +86,20 @@ function addToTeam(req, res) {
         })
       }
     })
+}
+
+// function createRating(req, res) {
+//   Hero.findById(req.params.id).then((hero) => {
+//     hero.ratings.push(req.body)
+//     hero.save()
+//       .then(() => {
+//         res.redirect(`/heroes`)
+//       })
+//   })
+// }
+
+function deleteHero(req, res){
+  Hero.findByIdAndDelete(req.params.id).then((hero) => {
+    res.redirect('/heroes')
+  })
 }

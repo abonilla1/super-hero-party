@@ -1,8 +1,11 @@
 <%- include("../partials/header") %>
 
 <% heroes.forEach((h) => { %>
-    <img src="<%= h.imageUrl %>">
-    <a href=/heroes/<%= h.id%>>See Details for<%= h.name %></a>
+   <form action="/heroes/<%=h.id%>?_method=DELETE" method="POST">
+        <img src="<%= h.imageUrl %>">
+        <a href=/heroes/<%= h.id%>>See Details for <%= h.name %></a>
+        <button type="submit" class="btn-btn-warning">Remove from team</button>
+    </form> 
 <% }) %>
 
 
