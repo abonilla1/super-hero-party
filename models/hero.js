@@ -16,11 +16,10 @@ const ratingSchema = new Schema (
 const heroSchema = new Schema (
     {
         name: String,
+        secretName: String,
         apiId: Number,
         imageUrl: String,
-        stats: [],
         addedBy: [{type: Schema.Types.ObjectId, ref: "User"}],
-        starredBy:[{type: Schema.Types.ObjectId, ref: "User"}],
         rating: [ratingSchema]
     },
     {

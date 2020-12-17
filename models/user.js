@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+
 const userSchema = new Schema(
   {
     name: String,
@@ -8,7 +9,6 @@ const userSchema = new Schema(
     email: String,
     avatar: String,
     googleId: String,
-    superTeam: [{type: Schema.Types.ObjectId, ref: "Hero"}],
   },
   {
     timestamps: true,

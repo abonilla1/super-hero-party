@@ -1,9 +1,10 @@
 const router = require("express").Router();
 const heroesCtrl = require("../controllers/heroes")
 
+
+router.post("/", isLoggedIn, heroesCtrl.addToTeam)
 router.get("/new", isLoggedIn, heroesCtrl.new)
 router.get("/", isLoggedIn, heroesCtrl.index)
-router.post("/", isLoggedIn, heroesCtrl.addToTeam)
 router.get("/:id", isLoggedIn, heroesCtrl.show)
 router.post("/search", isLoggedIn, heroesCtrl.search)
 

@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+
+<div class="profile-card" class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="user.avatar" alt="user avatar">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item">
+                    <p class="card-title">Name: <%= user.name %></p>
+                    <p class="card-text">Nickname: <%= user.nickname %></p>
+                    <p class="card-text">Email: <%= user.email %></p>
+                </li>    
+                <li class="nav-item">
+                  <a class="nav-link active"href="#update">Update Profile</a>
+                  <form action="/users/profile?_method=PUT" method="POST">
+                    <label for="avatarUrl">Avatar Image URL:</label>
+                    <input type="text" id="avatarUrl" class="form-control" name="avatar" value="<%= user.avatar %>">
+                    <label for="bio">Bio:</label>
+                    <textarea rows="3" id="bio" class="form-control" name="bio"><%= user.bio %></textarea>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>    
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#friends">My Friends</a>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<%- include('../partials/footer') %>

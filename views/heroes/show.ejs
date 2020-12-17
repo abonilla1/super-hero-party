@@ -3,10 +3,10 @@
 <h3><%=hero.name%> Details </h3>
 
 <img src="<%=hero.image.url%>" alt="..." height=400px>
-<div class="card-group">
-    <div class="card">
+<div class="card-group" class="border border-info">
+    <div class="card" >
         <ul>
-            <p>Stats:</p>
+            <p>Stats</p>
             <li>Intelligence: <%=hero.powerstats.intelligence%></li>
             <li>Strength: <%=hero.powerstats.strength%></li>
             <li>Speed: <%=hero.powerstats.speed%> </li>
@@ -21,13 +21,18 @@
     </div>
     <div class="card">
         <p>This is where ratings will go</p>
+        <form action="/heroes/">
+        <button type="submit">Add a rating</button>
+    </form>
     </div>
   </div>
-
-<form action="/heroes/team" method="POST"></form>
-    <input type="text" hidden name="query" value="<%=hero.id%>"> 
-    <button type="submit"class="btn btn-primary">Add to Team</button>
+<form action="/heroes" method="POST">
+    <input type="text" hidden name="name" value="<%= hero.name %>">
+    <input type="text" hidden name="imageUrl" value="<%=hero.image.url%>">
+    <input type="text" hidden name="apiId" value="<%=hero.id%>">
+    <button type="submit"> "Add to Team"</button>
 </form>
+
 
 <%- include("../partials/footer")%>
 

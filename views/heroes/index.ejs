@@ -1,3 +1,10 @@
 <%- include("../partials/header") %>
 
+<% heroes.forEach((h) => { %>
+    <img src="<%= h.imageUrl %>">
+    <a href=/heroes/<%= h.id%>>See Details for<%= h.name %></a>
+<% }) %>
+
+
+
 <%- include("../partials/footer") %>

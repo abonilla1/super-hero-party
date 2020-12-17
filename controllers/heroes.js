@@ -1,4 +1,5 @@
 const Hero = require("../models/hero");
+const User = require("../models/user");
 const axios = require("axios");
 
 
@@ -12,12 +13,15 @@ module.exports = {
     
 }
 
-function index (req, res) {
-    res.render('heroes', {
+function index(req, res) {
+    Hero.find({ addedBy: req.user._id })
+    .then((heroes) => {
+      res.render('heroes/index', {
         user: req.user,
         heroes
+      })
     })
-}
+  }
 
 
 function newHero(req, res) {
@@ -40,18 +44,20 @@ function search(req, res) {
 function show(req, res) {
     axios.get(`https://superheroapi.com/api/${process.env.API_KEY}/${req.params.id}`)
     .then((response) => {
-        Hero.findOne({ id: response.data.id})
+        Hero.findOne({ id: response.data.id}).populate('addedBy')
         .then((hero) => {
-            if (hero) {
+            if(hero) {
                 res.render("heroes/show", {
                     user: req.user,
-                    hero: response.data
+                    hero: response.data,
+                    addedBy: hero.addedBy,
                 });
             }
             else {
                 res.render("heroes/show", {
                     user: req.user,
-                    hero: response.data
+                    hero: response.data,
+                    addedBy: [""]
                 });
             }
         })
@@ -59,16 +65,18 @@ function show(req, res) {
 }
 
 function addToTeam(req, res) {
-    Hero.findOne({apiId: parseInt(req.body.hero)})
-    console.log(hero)
+    Hero.findOne({ apiId: parseInt(req.body.apiId) })
     .then((hero) => {
       if (hero) {
+        hero.addedBy.push(req.user._id)
         hero.save()
         .then(() => {
           res.redirect(`/heroes`)
         })
       } else {
-        Hero.create(axios.get(`https://superheroapi.com/api/${process.env.API_KEY}/${id}`))
+        console.log(hero)
+        req.body.addedBy = req.user._id
+        Hero.create(req.body)
         .then(() => {
           res.redirect(`/heroes`)
         })
