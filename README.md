@@ -1,4 +1,4 @@
-# super-hero-party
+# Super-hero-party
 
 # Start collecting now! 
 //link to heroku
