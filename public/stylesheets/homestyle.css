@@ -25,13 +25,13 @@ button {
 }
 
 #messageboard {
-    background-color: grey;
+    background-color: lightgrey;
     grid-column-start: -1;
     grid-column-end: -2;
 }
 
 #heroNews{
-    background-color: grey;
+    background-color: lightgrey;
     grid-column-start: 1;
     grid-column-end: 2;
 

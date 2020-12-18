@@ -30,3 +30,5 @@
  Though these Attributions are technically required I would like to sincerely thank the artists whose individual work make this website look great and operate smoothly. Thank you!
  
  Background image used on all pages: "Texture" by https://www.heropatterns.com/ by Steve Schoger who graciously provides these fantastic materials for free. 
+
+ Special thanks to Amit Agarwal from Digital Inspiration to 
