@@ -6,9 +6,9 @@ const heroesCtrl = require("../controllers/heroes")
 router.post("/", isLoggedIn, heroesCtrl.addToTeam)
 router.get("/new", isLoggedIn, heroesCtrl.new)
 router.get("/", isLoggedIn, heroesCtrl.index)
-router.delete("/:id", isLoggedIn, heroesCtrl.delete)
 router.get("/:id", isLoggedIn, heroesCtrl.show)
-// router.post("/:id", isLoggedIn, heroesCtrl.createRating)
+router.delete("/:id", isLoggedIn, heroesCtrl.delete)
+router.post("/:id/ratings", isLoggedIn, heroesCtrl.createRating)
 router.post("/search", isLoggedIn, heroesCtrl.search)
 
 

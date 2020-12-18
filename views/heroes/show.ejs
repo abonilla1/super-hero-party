@@ -19,13 +19,14 @@
         <p>First Appeared: <%= hero.biography["first-appearance"]%> </p>
         <p>Affiliations: <%=hero.connections["group-affiliation"]%></p>
     </div>
-    <div class="card">
-        <p>This is where ratings will go</p>
-        <form action="/heroes/<%=hero.id%>" method="POST">
+    <div class="card" name="ratings">
+        <a>Ratings</a>
+        <form action="/heroes/<%=hero.id%>/ratings" method="POST">
             <input type="text" name="content" placeholder="Why do you like this hero?">
-            <input type="number" min="1" max="5" name="rating">
-        <button type="submit">Add a rating</button>
-    </form>
+            <input type="number" min="1" max="10" name="rating">
+            <br>
+            <button type="submit">Add a rating</button>
+        </form>
     </div>
   </div>
 <form action="/heroes" method="POST">

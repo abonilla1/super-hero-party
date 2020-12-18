@@ -9,7 +9,7 @@ module.exports = {
     search,
     show,
     addToTeam,
-    // createRating,
+    createRating,
     delete: deleteHero
   
     
@@ -88,15 +88,16 @@ function addToTeam(req, res) {
     })
 }
 
-// function createRating(req, res) {
-//   Hero.findById(req.params.id).then((hero) => {
-//     hero.ratings.push(req.body)
-//     hero.save()
-//       .then(() => {
-//         res.redirect(`/heroes`)
-//       })
-//   })
-// }
+function createRating(req, res) {
+  Hero.findById(req.params.id).then((hero) => {
+    hero.rating.push(req.body.ratings)
+    hero.save()
+    console.log(hero)
+      .then(() => {
+        res.render(`heroes/${hero.apiId}`)
+      })
+  })
+}
 
 function deleteHero(req, res){
   Hero.findByIdAndDelete(req.params.id).then((hero) => {

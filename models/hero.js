@@ -4,7 +4,6 @@ const Schema = mongoose.Schema
 
 const ratingSchema = new Schema (
     { 
-        ratedBy: String,
         rating: {type: Number, min: 1, max: 10 },
         content: String,
     }, 

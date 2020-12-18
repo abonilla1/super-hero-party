@@ -1,9 +1,9 @@
 <%- include("../partials/header") %>
 
-<% heroes.forEach((h) => { %>
-   <form action="/heroes/<%=h.id%>?_method=DELETE" method="POST">
-        <img src="<%= h.imageUrl %>">
-        <a href=/heroes/<%= h.id%>>See Details for <%= h.name %></a>
+<% heroes.forEach((hero) => { %>
+   <form action="/heroes/<%=hero.id%>?_method=DELETE" method="POST">
+        <img src="<%= hero.imageUrl %>">
+        <a href=/heroes/<%=hero.apiId%>>See Details for <%= hero.name %></a>
         <button type="submit" class="btn-btn-warning">Remove from team</button>
     </form> 
 <% }) %>
