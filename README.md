@@ -31,4 +31,4 @@
  
  Background image used on all pages: "Texture" by https://www.heropatterns.com/ by Steve Schoger who graciously provides these fantastic materials for free. 
 
- Special thanks to Amit Agarwal from Digital Inspiration to 
+ Special thanks to Amit Agarwal from Digital Inspiration who provided the scripts necessary to embed YouTube Audio
