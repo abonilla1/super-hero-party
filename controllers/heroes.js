@@ -89,12 +89,11 @@ function addToTeam(req, res) {
 }
 
 function createRating(req, res) {
-  Hero.findById(req.params.id).then((hero) => {
-    hero.rating.push(req.body.ratings)
+  Hero.findOne({apiId: parseInt(req.params.id)}).then((hero) => {
+    hero.rating.push(req.body)
     hero.save()
-    console.log(hero)
       .then(() => {
-        res.render(`heroes/${hero.apiId}`)
+        res.render(`heroes/${hero.id}`)
       })
   })
 }
