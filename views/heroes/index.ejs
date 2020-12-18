@@ -1,13 +1,21 @@
 <%- include("../partials/header") %>
 
+
 <% heroes.forEach((hero) => { %>
-   <form action="/heroes/<%=hero.id%>?_method=DELETE" method="POST">
-        <img src="<%= hero.imageUrl %>">
-        <a href=/heroes/<%=hero.apiId%>>See Details for <%= hero.name %></a>
-        <button type="submit" class="btn-btn-warning">Remove from team</button>
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img height="200" src="<%= hero.imageUrl %>">
+          </div>
+            <div class="card-body col-md-6">
+              <h5 class="card-title"><a href=/heroes/<%=hero.apiId%>>See Details for <%= hero.name %></a></h5>
+              <form action="/heroes/<%=hero.id%>?_method=DELETE" method="POST">
+                <div class="card-body"><button class="btn btn-primary" type="submit">Remove from team</button>
+                </div>  
+            </div>
+        </div>
+      </div>        
     </form> 
 <% }) %>
-
-
 
 <%- include("../partials/footer") %>

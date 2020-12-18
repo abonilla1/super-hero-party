@@ -3,22 +3,40 @@ body {
     background-color: #ffffff;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23fe2a00' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
     font-family: 'Bebas Neue', cursive;
-    display: flex;
-    grid-gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
 }    
 
-nav {
+#nav {
     width: 100%;
-    justify-content: end;
-    grid-area: "nav";
+    justify-content: center;
+    grid-column: span 3;
 }
 
-.main {
-    grid-area: "main";
+.navLi {
+    margin-left: 20px;
 }
 
 
 button {
     padding: 10px;
+
+}
+
+#messageboard {
+    background-color: grey;
+    grid-column-start: -1;
+    grid-column-end: -2;
+}
+
+#heroNews{
+    background-color: grey;
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+}
+
+#youtube-audio {
+    height: 10px;
 }

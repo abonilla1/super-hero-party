@@ -1,10 +1,10 @@
 <%- include("../partials/header")%>
 
 <h3><%=hero.name%> Details </h3>
+<img src="<%=hero.image.url%>" alt="..." height=300px>
 
-<img src="<%=hero.image.url%>" alt="..." height=400px>
-<div class="card-group" class="border border-info">
-    <div class="card" >
+<div class="card-group">
+    <div class="card text-dark bg-light text-center m-2 border border-1 border-primary rounded">
         <ul>
             <p>Stats</p>
             <li>Intelligence: <%=hero.powerstats.intelligence%></li>
@@ -14,30 +14,30 @@
             <li>Combat: <%=hero.powerstats.combat%> </li>
         </ul>
     </div>
-    <div class="card">
+    <div class="card text-dark bg-light text-center m-2 border border-1 border-primary rounded">
         <p>Publisher: <%=hero.biography["publisher"] %> </p>
         <p>First Appeared: <%= hero.biography["first-appearance"]%> </p>
         <p>Affiliations: <%=hero.connections["group-affiliation"]%></p>
     </div>
-    <div class="card" name="ratings">
+    <div class="card text-dark bg-light text-center m-2 border border-1 rounded border-primary" name="ratings">
         <a>Ratings</a>
         <form action="/heroes/<%=hero.id%>/ratings" method="POST">
             <input type="text" name="content" placeholder="Why do you like this hero?">
+            <br>
             <input type="number" min="1" max="10" name="rating">
             <br>
-            <button type="submit">Add a rating</button>
+            <br>
+            <input type="text" hidden name="apiId" value="<%=hero.id%>">
+            <button class="btn btn-primary" type="submit">Add Rating</button>
         </form>
     </div>
-  </div>
+</div>
 <form action="/heroes" method="POST">
     <input type="text" hidden name="name" value="<%= hero.name %>">
     <input type="text" hidden name="imageUrl" value="<%=hero.image.url%>">
     <input type="text" hidden name="apiId" value="<%=hero.id%>">
-    <button type="submit"> "Add to Team"</button>
+    <input class="btn btn-primary" type="submit" value="Add to Team">
 </form>
-
+<form action="/heroes/<%=hero.id%>/"></form>
 
 <%- include("../partials/footer")%>
-
-
-

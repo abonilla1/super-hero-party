@@ -1,0 +1,19 @@
+<%- include("../partials/header")%>
+<h1> Users Currently Active</h1>
+
+<% users.forEach(u => { %>
+    <a href="/users/<%= u._id %>">
+      <div class="card">
+        <div class="card-body">
+          <img height="50" id="avatarPhoto" src="<%= u.avatar ? u.avatar : 'http://theoldreader.com/kittens/300/300/' %>" alt=""> 
+          <%= u.name %></a> - Joined on <%= u.createdAt.toLocaleString().split(',')[0] %>
+        </div>
+      </div><br>
+  <% }) %>
+
+<div data-video="iYZIUtDAFIw"
+  data-autoplay="1"
+  data-loop="1"
+  id="youtube-audio">
+</div>
+<%- include("../partials/footer")%>

@@ -2,26 +2,31 @@
 
 <div class="profile-card" class="card mb-3" style="max-width: 540px;">
   <div class="row g-0">
-    <div class="col-md-4">
-      <img src="user.avatar" alt="user avatar">
-      <p class="card-text">Name: <%= user.name %></p>
-      <p class="card-text">Email: <%= user.email %></p>
-      <p class="card-text">Nickname: <%= user.nickname%></p>
-      <p class="card-text">Bio: <%= user.bio %></p>
+    <div class="col-md-14">
+      <div class="userInfo">
+        <img src=user.avatar alt="user avatar">
+        <p class="card-text">Name: <b><%= user.name %> </b> </p>
+        <p class="card-text">Email: <b><%= user.email %> </b> </p>
+        <p class="card-text">Nickname: <b><%= user.nickname%> </b> </p>
+        <p class="card-text">Bio: <b> <%= user.bio %> </b> </p>
+      </div>
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <form action="profile/<%= user._id%>?_method=PUT" method="POST">
-          <label>Change Nickname:</label>
-          <input type="text class="form-control" name="nickname" placeholder="<%= user.nickname %>">
-          </br>
-          <label>Bio:</label>
-          <textarea rows="3" id="bio" class="form-control" name="bio"><%= user.bio %></textarea>
-          </br>  
-          <label>Change Avatar (URL):</label>
-          <input type="text" id="avatarUrl" class="form-control" name="imageUrl" placeholder="<%= user.avatar %>">
-          <button type="submit" class="btn btn-primary">Update</button>
-        </form>
+    <hr>
+    <div id="col-md-12">
+      <div class="card-body1">
+        <div class="userUpdate">
+          <form action="profile/<%= user._id%>?_method=PUT" method="POST">
+            <label>Change Nickname:</label>
+            <input type="text class=" form-control" name="nickname" placeholder="<%= user.nickname %>">
+            </br>
+            <label> Update Bio:</label>
+            <textarea rows="3" id="bio" class="form-control" name="bio"><%= user.bio %></textarea>
+            </br>
+            <label>Change Avatar (URL):</label>
+            <input type="text" id="avatarUrl" class="form-control" name="imageUrl" placeholder="<%= user.avatar %>">
+            <button type="submit" class="btn btn-primary" id='updateButton'>Update</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>

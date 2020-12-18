@@ -1,3 +1,9 @@
-<%- include('partials/home') %>
+<% if (user) { %>
+    <%- include('partials/home') %>
+   
+<% } else { %>
+    <%- include('partials/login') %>
+<% } %>
+
 
 <%- include('partials/footer') %>

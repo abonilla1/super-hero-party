@@ -7,14 +7,14 @@
             <input type="text" name="query" placeholder="Type Hero Name">
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Search</button>
+    <button id="searchbutton" type="submit" class="btn btn-primary">Search</button>
 </form>
 
 <% if(results) { %>
     <% results.forEach(hero => { %>
         <div class="card border-primary mb-3" style="width: 20rem;">
             <img src="<%=hero.image.url%>" class="card-img-top" alt="...">
-            <div class="card-body">
+            <div class="card-stock">
                 <h5 class="card-title"><%= hero.name%></h5>
             </div>
                 <h5 class="hero-S-identity"> Identity: <%=hero.biography["full-name"]%></h5>
@@ -22,7 +22,7 @@
                 <li class="list-group-item">Occupation: <%=hero.work.occupation%></li>
                 <li class="list-group-item">Alignment: <%=hero.biography.alignment%></li>
             </ul>
-            <div class="card-body">
+            <div class="card-stock">
                 <a href="/heroes/<%=hero.id%>" class="card-link">Details</a>
             </div>
         </div>

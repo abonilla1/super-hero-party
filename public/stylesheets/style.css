@@ -31,3 +31,43 @@ p {
     margin-left: 16px;
     color: #315cd3;
 }
+.card-group {
+    margin: 20px;
+    border-radius: 10%;
+    justify-content: center;
+}
+.card-stock {
+    padding: 20px;
+    justify-content: center;
+}
+.card-body {
+    background-color: lightgray;
+
+}
+
+#searchbutton {
+    margin: 10px;
+    padding-right: 50%;
+}
+
+.profile-card {
+    background-color: lightgray;
+}
+
+.userInfo {
+    margin: 20px;
+    padding: 30px;
+    font-size: large;
+}
+
+.userUpdate {
+    margin: 5px;
+    padding: 20px;
+}
+
+#updateButton {
+    margin: 10px;
+}
+#youtube-audio {
+    height: 10px;
+}

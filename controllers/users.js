@@ -8,6 +8,9 @@ module.exports = {
 }
 
 function index(req, res) {
+    User.find({}).then((users) => {
+    res.render("users", {user: req.user, users }
+    )})
     
 }
 
