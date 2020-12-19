@@ -3,7 +3,8 @@ const Message = require('../models/message')
 module.exports = {
   index,
   create,
-  reply
+  reply,
+  delete: deleteMessage
 }
 
 function index(req, res) {
@@ -18,9 +19,10 @@ function index(req, res) {
 
 function create(req, res) {
   req.body.postedBy = req.user.nickname
+  req.body.avatar = req.user.avatar
   Message.create(req.body)
   .then(() => {
-    res.redirect("/index")
+    res.redirect("/")
   })
 }
 
@@ -34,5 +36,11 @@ function reply(req, res) {
     .then(() => {
       res.redirect(`/messages/${message._id}`)
     })
+  })
+}
+
+function deleteMessage(req, res) {
+  Message.findByIdAndDelete(req.params.id).then(() => {
+    res.redirect("/")
   })
 }

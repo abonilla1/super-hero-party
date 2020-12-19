@@ -42,7 +42,7 @@
     <div>
       <h3>This is where the messageboard cards will append</h3>
     </div>
-    <form action="/index" method=POST>
+    <form action="/" method=POST>
       <div class="card" style="width: 10rem;"></div>
         <div class="card-body text-dark bg-light mb-3">
           <input type="text" name="content" placeholder="Write something!">
@@ -56,15 +56,18 @@
       <h5><%="No messages yet"%> </h5> 
     <%} else { %> 
       <% messages.forEach((message) => { %>
-        <div class="card" id="messagecard">
-          <div class="card-header">
-          <%= message.postedBy %> <img id="avatarPhoto" width="30" src="<%= message.avatar %>" alt="">
+        <form action="/<%=message._id%>?_method=DELETE" method="POST">
+          <div class="card" id="messagecard">
+            <div class="card-header">
+              <%= message.postedBy %> <img id="avatarPhoto" width="30" src="<%= message.avatar %>" alt="">
+            </div>
+            <div class="card-body">
+              <h6 class="card-title"><%= message.content %></h6>
+              <p><%= message.createdAt.toLocaleString()%></p>
+              <button type="submit">X</button>
+            </div>
           </div>
-          <div class="card-body">
-          <h6 class="card-title"><%= message.content %></h6>
-          <p><%= message.createdAt.toLocaleString()%></p>
-          </div>
-        </div>
+        </form>
       <% }) %>
     <% } %>
   </container>
