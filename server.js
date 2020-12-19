@@ -21,7 +21,8 @@ require("./config/passport");
 const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 const heroesRouter = require("./routes/heroes");
-const usersRouter = require("./routes/users")
+const usersRouter = require("./routes/users");
+
 
 const app = express();
 
@@ -53,6 +54,7 @@ app.use("/", indexRouter);
 app.use("/auth", authRouter);
 app.use("/heroes", heroesRouter);
 app.use("/users", usersRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

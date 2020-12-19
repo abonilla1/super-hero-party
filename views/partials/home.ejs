@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,16 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/homestyle.css" />
 </head>
-
 <body>
   <container id="nav">
     <nav class="navbar sticky-top navbar-expand-xl navbar-dark bg-primary">
       <div>
         <div class="navbar-nav">
           <li class="navLi">
-            <a class="nav-link active" href="/">Home</a> 
+            <a class="nav-link active" href="/">Home</a>
           </li>
-            <a class="nav-link active" aria-current="page" href="/heroes/new">Search for Heroes</a>
+          <a class="nav-link active" aria-current="page" href="/heroes/new">Search for Heroes</a>
           <li class="navLi">
             <a class="nav-link active" href="/heroes">My Team</a>
           </li>
@@ -31,12 +29,11 @@
           </li>
           <li class="navLi">
             <% if (user) { %>
-              <a class="nav-link active navbar-right" href="/auth/logout">Log Out</a>
-              <% } else { %>
-              <a class="nav-link active navbar-right" href="/auth/google">Login with google</a>
-              <% } %>
+            <a class="nav-link active navbar-right" href="/auth/logout">Log Out</a>
+            <% } else { %>
+            <a class="nav-link active navbar-right" href="/auth/google">Login with google</a>
+            <% } %>
           </li>
-  
         </div>
       </div>
     </nav>
@@ -45,24 +42,36 @@
     <div>
       <h3>This is where the messageboard cards will append</h3>
     </div>
-    <form action="/" method=POST></form>
+    <form action="/index" method=POST>
       <div class="card" style="width: 10rem;"></div>
         <div class="card-body text-dark bg-light mb-3">
-          <input type="content" name="content" placeholder="This week's topic, Who is the Best Super hero?!">
+          <input type="text" name="content" placeholder="Write something!">
           <br>
           <br>
-          <button type="submit" class="btn btn-primary">!!FIGHT!!</button>  
+          <button type="submit" class="btn btn-primary">Post</button>
         </div>
-      </div> 
+      </div>    
     </form>
+    <% if (messages.length == 0) { %>
+      <h5><%="No messages yet"%> </h5> 
+    <%} else { %> 
+      <% messages.forEach((message) => { %>
+        <div class="card" id="messagecard">
+          <div class="card-header">
+          <%= message.postedBy %> <img id="avatarPhoto" width="30" src="<%= message.avatar %>" alt="">
+          </div>
+          <div class="card-body">
+          <h6 class="card-title"><%= message.content %></h6>
+          <p><%= message.createdAt.toLocaleString()%></p>
+          </div>
+        </div>
+      <% }) %>
+    <% } %>
   </container>
   <container id="heroNews">
     <div>
       <h3>This is where site updates and rankings will populate!</h3>
     </div>
-    <div data-video="YAn8FVUp090"
-      data-autoplay="1"
-      data-loop="1"
-      id="youtube-audio">
+    <div data-video="YAn8FVUp090" data-autoplay="1" data-loop="1" id="youtube-audio">
     </div>
   </container>
