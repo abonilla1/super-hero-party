@@ -39,13 +39,13 @@
     </nav>
   </container>
   <container id="messageboard">
-    <div>
-      <h3>This is where the messageboard cards will append</h3>
+    <div id="messageheader">
+      <h3>Tell us about your favorite Hero!</h3>
     </div>
     <form action="/" method=POST>
-      <div class="card" style="width: 10rem;"></div>
+      <div id="postcard" class="card" style="width: 10rem;"></div>
         <div class="card-body text-dark bg-light mb-3">
-          <input type="text" name="content" placeholder="Write something!">
+          <input type="text" name="content" placeholder="...">
           <br>
           <br>
           <button type="submit" class="btn btn-primary">Post</button>
@@ -62,9 +62,9 @@
               <%= message.postedBy %> <img id="avatarPhoto" width="30" src="<%= message.avatar %>" alt="">
             </div>
             <div class="card-body">
-              <h6 class="card-title"><%= message.content %></h6>
+              <h6 class="card-title" id="messagecontent"><%= message.content %></h6>
               <p><%= message.createdAt.toLocaleString()%></p>
-              <button type="submit">X</button>
+              <button type="submit" class="btn btn-primary">Delete</button>
             </div>
           </div>
         </form>
