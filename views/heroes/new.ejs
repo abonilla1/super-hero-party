@@ -1,6 +1,9 @@
 <%- include("../partials/header") %>
 
 <h4>Search for a Hero to add to your team</h4>
+<br>
+<p>Note: You may have to add a hyphen in some searches</p>
+
 <form action="/heroes/search" method="POST">
     <div class="form-row">
         <div class="col-md-6">
@@ -23,7 +26,15 @@
                 <li class="list-group-item">Alignment: <%=hero.biography.alignment%></li>
             </ul>
             <div class="card-stock">
-                <a href="/heroes/<%=hero.id%>" class="card-link">Details</a>
+                <a href="/heroes/<%=hero.id%>" class="btn btn-primary">Details</a>
+                <br>
+                <br>
+                <form action="/heroes" method="POST">
+                    <input type="text" hidden name="name" value="<%= hero.name %>">
+                    <input type="text" hidden name="imageUrl" value="<%=hero.image.url%>">
+                    <input type="text" hidden name="apiId" value="<%=hero.id%>">
+                    <input class="btn btn-primary form-inline" type="submit" value="Add to Team">
+                </form>
             </div>
         </div>
     <% }) %>

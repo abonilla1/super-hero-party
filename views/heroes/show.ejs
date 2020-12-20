@@ -4,7 +4,7 @@
 <img src="<%=hero.image.url%>" alt="..." height=300px>
 
 <div class="card-group">
-    <div class="card text-dark bg-light text-center m-2 border border-1 border-primary rounded">
+    <div style="min-width: 300px" class="card text-dark bg-light text-center m-2 border border-1 border-primary rounded">
         <ul>
             <p>Stats</p>
             <li>Intelligence: <%=hero.powerstats.intelligence%></li>
@@ -14,15 +14,17 @@
             <li>Combat: <%=hero.powerstats.combat%> </li>
         </ul>
     </div>
-    <div class="card text-dark bg-light text-center m-2 border border-1 border-primary rounded">
+    <div style="min-width: 300px" class="card text-dark bg-light text-center m-2 border border-1 border-primary rounded">
         <p>Publisher: <%=hero.biography["publisher"] %> </p>
         <p>First Appeared: <%= hero.biography["first-appearance"]%> </p>
         <p>Affiliations: <%=hero.connections["group-affiliation"]%></p>
     </div>
-    <div class="card text-dark bg-light text-center m-2 border border-1 rounded border-primary" name="ratings">
+    <div class="card text-dark bg-light text-center m-2 border border-1 rounded border-primary" style="min-width: 300px" name="ratings">
         <a>Ratings</a>
+        <p>This hero is currently rated at: </p>
         <form action="/heroes/<%=hero.id%>/ratings" method="POST">
-            <input type="text" name="content" placeholder="Why do you like this hero?">
+           
+            <br>
             <br>
             <input type="number" min="1" max="10" name="rating">
             <br>
@@ -37,9 +39,11 @@
     <input type="text" hidden name="imageUrl" value="<%=hero.image.url%>">
     <input type="text" hidden name="apiId" value="<%=hero.id%>">
     <input class="btn btn-primary" type="submit" value="Add to Team">
+    <br>
+    <br>
 </form>
-</br>
-</br>
+<br>
+<br>
 <a class="btn btn-primary" href="/heroes/new" role="button">Back to Search</a>
 
 <%- include("../partials/footer")%>
