@@ -1,5 +1,8 @@
 <%- include("../partials/header") %>
 
+<% if (heroes.length == 0) { %>
+<h4><%="No cards in your collection yet" %></h4>
+<% } else { %>
 <% heroes.forEach((hero) => { %>
     <div class="card mb-3" style="max-width: 540px; min-width: 540px;">
         <div class="row g-0">
@@ -16,5 +19,6 @@
       </div>        
     </form> 
 <% }) %>
+<% } %>
 
 <%- include("../partials/footer") %>

@@ -21,10 +21,9 @@
     </div>
     <div class="card text-dark bg-light text-center m-2 border border-1 rounded border-primary" style="min-width: 300px" name="ratings">
         <a>Ratings</a>
-        <p>This hero is currently rated at: </p>
+        <p>Rate this hero on awesomeness from 1 - 10! </p>
+        <p>Defend your decision on the message board </p>
         <form action="/heroes/<%=hero.id%>/ratings" method="POST">
-           
-            <br>
             <br>
             <input type="number" min="1" max="10" name="rating">
             <br>
@@ -34,11 +33,15 @@
         </form>
     </div>
 </div>
-<form action="/heroes" method="POST">
+<% if (addedBy.some(u => {return u.email === user.email})) { %>
+    <form action="/heroes/<%= hero.id %>?_method=DELETE" method="POST">
+      <% } else { %>
+    <form action="/heroes" method="POST">
+  <% } %>
     <input type="text" hidden name="name" value="<%= hero.name %>">
     <input type="text" hidden name="imageUrl" value="<%=hero.image.url%>">
     <input type="text" hidden name="apiId" value="<%=hero.id%>">
-    <input class="btn btn-primary" type="submit" value="Add to Team">
+    <button class="btn btn-primary"><%= addedBy.some(u => {return u.email === user.email}) ? "Remove" : "Add to Cards" %></button>
     <br>
     <br>
 </form>
