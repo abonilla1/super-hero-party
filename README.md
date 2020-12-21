@@ -4,7 +4,7 @@
 https://super-hero-party.herokuapp.com/
 
 ## This is a full-stack web-based application that allows a user to manage a collection of super heros/ action heros across multiple universes.
-## This application is rendered using: 
+## The Technologies used for this application are: 
  * Javascript
  * Node.js
  * Express.js
