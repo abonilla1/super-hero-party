@@ -23,8 +23,11 @@ Planning with Trello Board technologies
 
 Screen Shots of Final Product
 
+Collection Index Page
 <img width="1365" alt="Screen Shot 2020-12-20 at 7 38 29 PM" src="https://user-images.githubusercontent.com/73343168/102732734-19188e00-4301-11eb-8472-17f6bcd82822.png">
 
+Hero Details Page
+<img width="1368" alt="Screen Shot 2020-12-20 at 7 38 52 PM" src="https://user-images.githubusercontent.com/73343168/102732802-4402e200-4301-11eb-8752-56d223a38113.png">
 
 
  
