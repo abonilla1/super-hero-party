@@ -1,7 +1,7 @@
 # Super-hero-party
 
 # Start collecting now! 
-//link to heroku
+https://super-hero-party.herokuapp.com/
 
 ## This is a full-stack web-based application that allows a user to collect and favorite super heros across multiple universes
 ## This application is rendered using: 
