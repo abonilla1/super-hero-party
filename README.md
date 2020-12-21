@@ -21,6 +21,9 @@ Planning with Trello Board technologies
 
 <img width="1368" alt="Screen Shot 2020-12-20 at 7 35 28 PM" src="https://user-images.githubusercontent.com/73343168/102732639-deaef100-4300-11eb-86d6-f46cbadf3a97.png">
 
+Screen Shots of Final Product
+
+<img width="1365" alt="Screen Shot 2020-12-20 at 7 38 29 PM" src="https://user-images.githubusercontent.com/73343168/102732734-19188e00-4301-11eb-8472-17f6bcd82822.png">
 
 
 
