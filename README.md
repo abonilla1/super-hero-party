@@ -3,7 +3,7 @@
 # Start collecting now! 
 https://super-hero-party.herokuapp.com/
 
-## This is a full-stack web-based application that allows a user manage a collection of super heros/ action heros across multiple universes.
+## This is a full-stack web-based application that allows a user to manage a collection of super heros/ action heros across multiple universes.
 ## This application is rendered using: 
  * Javascript
  * Node.js
@@ -15,6 +15,8 @@ https://super-hero-party.herokuapp.com/
  * GOOGLE OAUTH
  * mongoose
  * mongoDB
+ * Last but not least: superheroapi 
+ (link to documentation- https://superheroapi.com/ )
  
  
 #### Planning with Trello Board technologies
