@@ -23,6 +23,9 @@ https://super-hero-party.herokuapp.com/
 
 <img width="1368" alt="Screen Shot 2020-12-20 at 7 35 28 PM" src="https://user-images.githubusercontent.com/73343168/102732639-deaef100-4300-11eb-86d6-f46cbadf3a97.png">
 
+#### Wireframe of index layout
+https://whimsical.com/super-hero-party-Vwxbd8nXSh7bctXMiRHYsm
+
 #### Screen Shots of Final Product
 
 ##### Collection Index Page
