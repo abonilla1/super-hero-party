@@ -39,7 +39,7 @@ https://super-hero-party.herokuapp.com/
  * Card collecting features
  * Deck Comparison features 
  * Easter Eggs! 
- 
+ * Mobile Responsive Design
  
  #### Attributions
  Though these Attributions are technically required I would like to sincerely thank the artists whose individual work make this website look great and operate smoothly. Thank you!
@@ -48,3 +48,4 @@ https://super-hero-party.herokuapp.com/
  Special consideration to all those who worked on the Bootstrap 5 Beta release, this work would have been impossible without it.
  This App uses "Bebas Neue" Font from Google Fonts under the open font license, the princial designer of this work is Ryoichi Tsunekawa.
  
+ Special thanks also to my instructors and classmates at generalassemb.ly for their input and advice on this project!
