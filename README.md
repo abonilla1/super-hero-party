@@ -16,8 +16,11 @@ https://super-hero-party.herokuapp.com/
  * mongoose
  * mongoDB
  
+ 
+Initial planning using Trello Board technologies
 
- //link to Trello board here
+<img width="1368" alt="Screen Shot 2020-12-20 at 7 35 28 PM" src="https://user-images.githubusercontent.com/73343168/102732639-deaef100-4300-11eb-86d6-f46cbadf3a97.png">
+
  
  ## Planned Features for Future Release
  * Super Hero popularity polls
