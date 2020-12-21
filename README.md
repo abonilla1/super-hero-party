@@ -3,7 +3,7 @@
 # Start collecting now! 
 https://super-hero-party.herokuapp.com/
 
-## This is a full-stack web-based application that allows a user to collect and favorite super heros across multiple universes
+## This is a full-stack web-based application that allows a user manage a collection of super heros/ action heros across multiple universes.
 ## This application is rendered using: 
  * Javascript
  * Node.js
@@ -29,7 +29,8 @@ https://super-hero-party.herokuapp.com/
 ##### Hero Details Page
 <img width="1368" alt="Screen Shot 2020-12-20 at 7 38 52 PM" src="https://user-images.githubusercontent.com/73343168/102732802-4402e200-4301-11eb-8752-56d223a38113.png">
 
-
+##### Home Page/Message Board
+<img width="1364" alt="Screen Shot 2020-12-20 at 7 37 45 PM" src="https://user-images.githubusercontent.com/73343168/102732936-8debc800-4301-11eb-948c-e423d02b7856.png">
  
  ## Planned Features for Future Release
  * Super Hero popularity polls
@@ -42,5 +43,6 @@ https://super-hero-party.herokuapp.com/
  Though these Attributions are technically required I would like to sincerely thank the artists whose individual work make this website look great and operate smoothly. Thank you!
  
  Background image used on all pages: "Texture" by https://www.heropatterns.com/ by Steve Schoger who graciously provides these fantastic materials for free. 
-
- Special thanks to Amit Agarwal from Digital Inspiration who provided the scripts necessary to embed YouTube Audio
+ Special consideration to all those who worked on the Bootstrap 5 Beta release, this work would have been impossible without it.
+ This App uses "Bebas Neue" Font from Google Fonts under the open font license, the princial designer of this work is Ryoichi Tsunekawa.
+ 
