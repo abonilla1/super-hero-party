@@ -24,7 +24,7 @@ https://super-hero-party.herokuapp.com/
 <img width="1368" alt="Screen Shot 2020-12-20 at 7 35 28 PM" src="https://user-images.githubusercontent.com/73343168/102732639-deaef100-4300-11eb-86d6-f46cbadf3a97.png">
 
 #### Wireframe of index layout
-<iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/Vwxbd8nXSh7bctXMiRHYsm"></iframe>
+
 
 #### Screen Shots of Final Product
 
