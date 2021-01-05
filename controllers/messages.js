@@ -8,9 +8,8 @@ module.exports = {
 }
 
 function index(req, res) {
-  Message.find({})
-  .then((messages) => {
-    res.render("index", {
+  Message.find({}).then((messages) => {
+    res.render("home/index", {
       user: req.user,
       messages: messages.reverse()
     })
@@ -22,7 +21,7 @@ function create(req, res) {
   req.body.avatar = req.user.avatar
   Message.create(req.body)
   .then(() => {
-    res.redirect("/")
+    res.redirect("/home")
   })
 }
 
@@ -41,6 +40,6 @@ function reply(req, res) {
 
 function deleteMessage(req, res) {
   Message.findByIdAndDelete(req.params.id).then(() => {
-    res.redirect("/")
+    res.redirect("/home")
   })
 }

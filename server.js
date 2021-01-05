@@ -19,6 +19,7 @@ require("./config/passport");
 
 // require routes
 const indexRouter = require("./routes/index");
+const homeRouter = require("./routes/home");
 const authRouter = require("./routes/auth");
 const heroesRouter = require("./routes/heroes");
 const usersRouter = require("./routes/users");
@@ -51,6 +52,7 @@ app.use(passport.session());
 
 // router middleware
 app.use("/", indexRouter);
+app.use("/home", homeRouter);
 app.use("/auth", authRouter);
 app.use("/heroes", heroesRouter);
 app.use("/users", usersRouter);

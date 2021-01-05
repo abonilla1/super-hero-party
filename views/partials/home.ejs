@@ -15,7 +15,7 @@
       <div>
         <div class="navbar-nav">
           <li class="navLi">
-            <a class="nav-link active" href="/">Home</a>
+            <a class="nav-link active" href="/home">Home</a>
           </li>
           <a class="nav-link active" aria-current="page" href="/heroes/new">Search for Heroes</a>
           <li class="navLi">
@@ -28,11 +28,7 @@
             <a class="nav-link active" href="/users">Online Now!</a>
           </li>
           <li class="navLi">
-            <% if (user) { %>
-            <a class="nav-link active navbar-right" href="/auth/logout">Log Out</a>
-            <% } else { %>
-            <a class="nav-link active navbar-right" href="/auth/google">Login with google</a>
-            <% } %>
+          <a class="nav-link active navbar-right" href="/auth/logout">Log Out</a>
           </li>
         </div>
       </div>
@@ -42,7 +38,7 @@
     <div id="messageheader">
       <h3>Tell us about your favorite Hero!</h3>
     </div>
-    <form action="/" method=POST>
+    <form action="/home" method=POST>
       <div id="postcard" class="card" style="width: 10rem;"></div>
         <div class="card-body text-dark bg-light mb-3">
           <input type="text" name="content" placeholder="...">
@@ -52,11 +48,11 @@
         </div>
       </div>    
     </form>
-    <% if (messages.length == 0) { %>
-      <h5><%="No messages yet"%> </h5> 
-    <%} else { %> 
+    <% if (messages.length === 0) { %>
+      <h5><%= "No messages yet" %> </h5> 
+    <% } else { %> 
       <% messages.forEach((message) => { %>
-        <form action="/<%=message._id%>?_method=DELETE" method="POST">
+        <form action="/home/<%=message._id%>?_method=DELETE" method="POST">
           <div class="card" id="messagecard">
             <div class="card-header">
               <%= message.postedBy %> <img id="avatarPhoto" width="30" src="<%= message.avatar %>" alt="">
@@ -68,8 +64,9 @@
             </div>
           </div>
         </form>
-      <% }) %>
+      <% }) %>  
     <% } %>
+
   </container>
   <container id="heroNews">
     <div>
