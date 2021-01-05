@@ -4,7 +4,7 @@
 https://super-hero-party.herokuapp.com/
 
 ## This is a full-stack web-based application that allows a user to manage a collection of super heros/ action heros across multiple universes.
-## This application is rendered using: 
+## The Technologies used for this application are: 
  * Javascript
  * Node.js
  * Express.js
@@ -22,6 +22,10 @@ https://super-hero-party.herokuapp.com/
 #### Planning with Trello Board technologies
 
 <img width="1368" alt="Screen Shot 2020-12-20 at 7 35 28 PM" src="https://user-images.githubusercontent.com/73343168/102732639-deaef100-4300-11eb-86d6-f46cbadf3a97.png">
+
+#### Wireframe of index layout
+https://whimsical.com/super-hero-party-Vwxbd8nXSh7bctXMiRHYsm
+
 
 #### Screen Shots of Final Product
 
